@@ -1,0 +1,9 @@
+// Just a test SASS Variable and Nesting 
+
+$text-color1: red; 
+
+body {
+  div {
+    color: $text-color1 ;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": " concurrently \"live-server\" \"webpack --watch\" \"npm run watch-css\" ",
+    "build-css": "node-sass --include-path scss style.scss main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.1",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "concurrently": "^3.4.0"
+  }
+}

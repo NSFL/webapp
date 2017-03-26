@@ -12,10 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.5.1",
-    "nodemon": "^1.11.0"
+    "node-sass": "*",
+    "live-server": "*",
+    "webpack": "*",
+    "nodemon": "*"
   },
   "dependencies": {
-    "concurrently": "^3.4.0"
+    "concurrently": "*"
   }
 }

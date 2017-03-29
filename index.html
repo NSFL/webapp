@@ -8,10 +8,53 @@
 </head>
 
 <body>
+  	<div class="wrapper">
 
-	<!-- Just a test Div - to be removed -->
-  <div>
-    Hello World!
+      <header class="header">  
+        GoCrush   
+      </header><!-- /.header --> 
+
+  		<div class="main-page">
+        <h3>we're that confident you'll love GoCrush.</h3>
+        <br/>
+        <form class="login-form">
+            <h1><span class="sign-up">Sign Up</span></h1>
+            <p>You should have an account on Facebook to be able to sign up</p>
+            <br/>
+            <a href="https://www.facebook.com/login" target="_blank"><button class="login-btn" name="login with Facebook" type="submit">Login with Facebook</button></a>
+            <p>Don't have an account on Facebook?</p>
+            <a href="https://www.facebook.com/" class="fblink" target="_blank">Create a new Facebook account
+            </a>
+        </form>
+  		</div>
+        
+
+  		<div class="login-page">
+        <div class="welcome">
+          <h3>Welcome, <a href="#" class="user-name">{{name}}</a></h3>
+        </div>
+        <div class="content">
+
+          <div class="user-crushes">
+          <br/>
+            <p class="p1">I have crush on :</p>
+            <ol class="crush-list">
+              <li><a href="#" class="url1">url 1</a></li>
+              <li><a href="#" class="url2">url 2</a></li>
+              <input type="text" name="new crush" placeholder="Add new crush">
+            </ol>
+          </div>
+          <div class="notification-of-crushesNum" align="right">
+            <br/>
+            <p class="p2">Currently, you have<h1 class="number">0</h1>
+            <p class="p3">Crushes</p></p>
+            <p class="p2">Want your friends to know about your profile at GoCrush? <a href="#" class="fblink">Share to facebook now!</a></p>
+          </div>
+          
+        </div>
+  		
+  		</div>
+    
   </div>
 
 </body>

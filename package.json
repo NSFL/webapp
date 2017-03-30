@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": " concurrently \"live-server\" \"webpack --watch\" \"npm run watch-css\" ",
+    "postinstall": "npm install -g concurrently",
     "build-css": "node-sass --include-path scss style.scss main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "test": "test"
@@ -13,11 +14,16 @@
   "license": "ISC",
   "devDependencies": {
     "node-sass": "*",
-    "live-server": "*",
     "webpack": "*",
-    "nodemon": "*"
+    "nodemon": "*",
+    "babel-preset-es2015": "*",
+    "babel-loader": "*",
+    "babel-core": "*"
   },
   "dependencies": {
-    "concurrently": "*"
+    "live-server": "*",
+    "concurrently": "*",
+    "jquery": "^3.2.1",
+    "jquery-ui-dist": "^1.12.1"
   }
 }

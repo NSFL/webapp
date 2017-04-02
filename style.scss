@@ -1,3 +1,30 @@
+//colors
+$rose:#c33d6f;
+$darkgrey:#808d94;
+$fbbtn:#365899;
+$fblink:#3a5795;
+
+//fonts
+$cfont: Comic Sans MS;
+$afont: Arial;
+
+@mixin paragraph-text {
+	font:{
+		family:$cfont;
+		size:24px;
+	}
+	color:$rose;
+}
+
+@mixin welcome-header {
+	font:{
+  			family:$cfont;
+  			size:30px;
+  		}
+  		color:$darkgrey;
+  		margin-top:0.5;
+}
+
 body{
 	background-color:#e2e5e7;
 }
@@ -10,219 +37,412 @@ body{
 
 }
 .wrapper > * {
-  padding: 10px;
-  flex: 1 100%;
+  	padding: 10px;
+  	flex: 1 100%;
 }
 
 .header {
-  justify-content: center;
-  }
-
-img{
-
-	width:550px;
-	height:300px;
-	margin-top:0px;
-	float:center;
-	padding:0px;
-	border:0px;
+	font:{
+		size: 100px;
+  		family: "Courier New";
+  	}
+  	width:20%;
+  	color:$rose;
+  	line-height: 0.244;
+  	text-align: center;
+  	margin-top:25px;
+  	position: top;
+  	justify-content: center;
 }
 
 .main-page {
-  text-align: center;
-  display:block;
-  
+	width:80%;
+  	text-align: center;
+  	display:block;
+  	h3{
+  		@include welcome-header;
+	}
+	.login-form{
+	 
+		width: 570px;
+    	margin: 40px auto 30px;
+    	padding: 15px;
+    	position: relative;
+    	background: #fffaf6;
+    	border-radius: 4px;
+    	color: #7e7975;
+    	box-shadow:
+        	0 2px 2px rgba(0,0,0,0.2),        
+        	0 1px 5px rgba(0,0,0,0.2),        
+        	0 0 0 12px rgba(255,255,255,0.4); 
+
+    	h1{
+			font:{
+				size: 32px;
+    			weight: bold;
+    		}
+    		color: $rose;
+    		padding-bottom:25px;
+    		border-bottom: 1px solid #EBE6E2;
+    		text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    		box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+		}
+
+		p{
+			font:{
+				family:$cfont;
+				size:18px;
+			}
+			text-align:left;
+			padding-left:15px;
+		}
+		a{
+			.login-btn{
+				font:{
+					size:14.442px;
+					weight: bold;
+				}
+				width:210px;
+				background:#4267b2;
+				border:1px solid;
+				border-radius: 2px;
+				box-sizing: content-box;
+				padding:8px;
+				color:#fff;
+				display:inline-block;
+				white-space: nowrap;
+			}
+			.login-btn:hover{
+				cursor: auto;
+				background-color: $fbbtn;
+    			border-color: $fbbtn;
+    			text-decoration: none;
+			}
+
+		}
+		.fblink{
+			&:link {
+				text-decoration:none;
+				font-family:$afont;
+				color:$fblink;
+				cursor:auto;
+			}
+
+			&:hover{
+				text-decoration:underline;
+				font-family:$afont;
+				color:$fblink;
+			}
+
+			&:visited{
+				text-decoration:none;
+				font-family:$afont;
+				color:purple;
+			} 
+		}
+		   
+	}
 }
+
 .login-page{
+	width:80%;
 	text-align:center;
 	display:none;
-}
-h3{
-  font-family:Comic Sans MS;
-  font-size:30px;
-  color:#808d94;
-  margin-top:0.5;
+	.welcome{
+		width:100%;
+		height:20%;
+		h3{ 
+			@include welcome-header;
+			.user-name{
+				cursor:auto;
+				text-decoration:none;
+				color:$darkgrey;
+			}
+		}
+	}
+	.content{
+		display:flex;
+		width:100%;
+		height:80%;
+		flex-flow: row nowrap;
+		justify-content:baseline;
+		.user-crushes{
+			margin-left:0px;
+			width:50%;
+			flex-grow:1;
+			.p1 {
+				@include paragraph-text;
+				text-align:left;	
+				padding-left:15px;
+			}
+			li{
+				padding:0 0 5px 60px;
+				color:$rose;
+				font-size:20px;
+				.url1 , .url2{
+					text-decoration:none;
+					float:left;
+					display:block;
+				}
+			}
+			input{
+				width:250px;
+				height:25px;
+				margin:{
+					top:1px;
+					left:40px;
+				}
+				border-radius:10px;
+				border:1px solid silver;
+				padding:5px;
+				float:left;
+			}
+
+		}
+		.notification-of-crushesNum{
+			margin-left:0px;
+			width:50%;
+			height:455.3px;
+			.p2{
+				@include paragraph-text;
+				padding-right:200px;
+				padding-top:0px;
+				text-align:left;
+			}
+			.number{
+				font:{
+					size:130px;
+					family:$cfont;
+				}
+				padding:{
+					left:15px;
+					right:400px;
+				}
+				margin-top:-40px;
+			}
+				
+			.p3{
+				@include paragraph-text;
+				padding-right:280px;
+				margin-top:-150px;
+			}	
+		}
+		.user-crushes , .notification-of-crushesNum{
+			flex:1 100%;
+		}
+
+	}
 }
 
-.header {
-  font-size: 100px;
-  font-family: "Courier New";
-  color:#c33d6f;
-  line-height: 0.244;
-  text-align: center;
-  margin-top:25px;
-  position: top;
-}
 
-.login-form{
+@media only screen and (min-width:200px) and (max-width: 600px) {
+  	.wrapper { 
+  		width:100%;
+  		flex: 1 auto;
+  	}
+  	.header { 
+  		display:flex;
+  		width:100%;
+  		font-size:70px;
+  		align-self:center;
+  	}
+  	.main-page {
+		display:flex;
+  		flex-flow:row wrap;
+  		align-items:center;
+  		text-align: center;
+  		h3{
+  			@include welcome-header;
+  			text-align:center;
+		}
+		.login-form{
 	 
-	width: 570px;
-    margin: 40px auto 30px;
-    padding: 15px;
-    position: relative;
-    background: #fffaf6;
-    border-radius: 4px;
-    color: #7e7975;
-    box-shadow:
-        0 2px 2px rgba(0,0,0,0.2),        
-        0 1px 5px rgba(0,0,0,0.2),        
-        0 0 0 12px rgba(255,255,255,0.4); 
-}
-.login-form h1{
-	font-size: 32px;
-    font-weight: bold;
-    color: #c33d6f;
-    padding-bottom:25px;
-    border-bottom: 1px solid #EBE6E2;
-    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
-}
+			width: 100%;
+		}
+	}
+  	.login-page{
+  		display:flex;
+  		flex-flow:row wrap-reverse;
+  		align-items:center;
+  		.welcome{
+  			width:100%;
+  			order:1; 
+  		}
+  		.content{
+			display:flex;
+			width:100%;
+			flex-flow: row wrap;
+			align-items:center;
+			.notification-of-crushesNum{
+  				order:1; 
+  				width:100%;
+  				.p2{
+					@include paragraph-text;
+					padding-left:20%;
+					text-align:left;
+				}
+				.number{
+					font:{
+						size:100px;
+						family:$cfont;
+					}
+					padding:{
+						left:35%;
+						right:400px;
+					}
+					margin-top:-60px;
+				}		
+				.p3{
+					@include paragraph-text;
+					padding-right:30%;
+					margin-top:-120px;
+				}	
+  			}		
+	
+			.user-crushes{
+				order:2; 
+  				width:100%;
+  				height:40%;	
+  				.p1 {
+					@include paragraph-text;
+					text-align:left;	
+					padding-left:15px;
+					margin-top:0px;
+				}
+				li{
+					padding:0 0 5px 60px;
+					color:$rose;
+					font-size:20px;
+					.url1 , .url2{
+						text-decoration:none;
+						float:left;
+						display:block;
+					}
+			}
+			input{
+				width:250px;
+				height:25px;
+				margin:{
+					top:1px;
+					left:40px;
+				}
+				border-radius:10px;
+				border:1px solid silver;
+				padding:5px;
+				float:left;
+			}
 
-h2{
-	text-align:left;
-	color:white;
-	font-family:Constantia;
-	padding-left:10px;
-	margin-top:0px;
-	background-color:#c33d6f;
-}
-p{
-	text-align:left;
-	font-family:Comic Sans MS;
-	font-size:18px;
-	padding-left:15px;
-}
+  			}
 
-.login-btn:hover{
-
-	cursor: auto;
-	background-color: #365899;
-    border-color: #365899;
-    text-decoration: none;
-}
-
-
-
-.login-btn{
-	width:210px;
-	background:#4267b2;
-	border:1px solid;
-	border-radius: 2px;
-	box-sizing: content-box;
-	padding:8px;
-	color:#fff;
-	font-size:14.442px;
-	font-weight: bold;
-	display:inline-block;
-	white-space: nowrap;
-}
-
-.fblink:link {
-	text-decoration:none;
-	font-family:Arial;
-	color:#3a5795;
-	cursor:auto;
-}
-
-.fblink:hover{
-	text-decoration:underline;
-	font-family:Arial;
-	color:#3a5795;
-}
-
-.fblink:visited{
-	text-decoration:none;
-	font-family:Arial;
-	color:purple;
-}
-.user-name:link{
-	cursor:auto;
-	text-decoration:none;
-	color:#808d94;
-}
-.content{
-	display:flex;
-	width:1326px;
-	height:455.3px;
-	flex-flow: row nowrap;
-	justify-content:baseline;
+		}  	
+  	}
 
 
-}
-.user-crushes , .notification-of-crushesNum{
-	flex:1 100%;
-
-}
-.user-crushes{
-	margin-left:0px;
-	width:70%;
-	flex-grow:1;
-}
-.notification-of-crushesNum{
-	margin-left:0px;
-	width:95%;
-	height:455.3px;
+  	
 }
 
-li{
-	padding:0 0 5px 35px;
-	color:#c33d6f;
-	font-size:20px;
+@media only screen and (min-width:601px) and (max-width: 800px) {
+.wrapper { 
+  		width:100%;
+  		flex: 1 auto;
+  	}
+  	.header { 
+  		display:flex;
+  		width:100%;
+  		font-size:100px;
+  		padding-top:5px;
+  		align-self:center;
+  	}
+  	.main-page {
+		display:flex;
+  		flex-flow:row wrap;
+  		align-items:center;
+  		text-align: center;
+  		h3{
+  			@include welcome-header;
+  			padding-left:8px;
+  			
+		}
+		.login-form{
+	 
+			width: 100%;
+		}
+	}
+  	.login-page{
+  		display:flex;
+  		flex-flow:row wrap-reverse;
+  		align-items:center;
+  		.welcome{
+  			width:100%;
+  			order:1; 
+  		}
+  		.content{
+			display:flex;
+			width:100%;
+			flex-flow: row wrap;
+			align-items:center;
+			.notification-of-crushesNum{
+  				order:1; 
+  				width:100%;
+  				.p2{
+					@include paragraph-text;
+					padding-left:20%;
+					text-align:left;
+				}
+				.number{
+					font:{
+						size:100px;
+						family:$cfont;
+					}
+					padding:{
+						left:35%;
+						right:400px;
+					}
+					margin-top:-30px;
+				}		
+				.p3{
+					@include paragraph-text;
+					padding-right:35%;
+					margin-top:-120px;
+				}	
+  			}		
+	
+			.user-crushes{
+				order:2; 
+  				width:100%;
+  				height:40%;	
+  				.p1 {
+					@include paragraph-text;
+					text-align:left;	
+					padding-left:15px;
+					margin-top:0px;
+				}
+				li{
+					padding:0 0 5px 60px;
+					color:$rose;
+					font-size:20px;
+					.url1 , .url2{
+						text-decoration:none;
+						float:left;
+						display:block;
+					}
+			}
+			input{
+				width:250px;
+				height:25px;
+				margin:{
+					top:1px;
+					left:40px;
+				}
+				border-radius:10px;
+				border:1px solid silver;
+				padding:5px;
+				float:left;
+			}
 
-}
-.url1 , .url2{
-	text-decoration:none;
-	float:left;
-	display:block;
-}
+  			}
 
-input{
-	width:250px;
-	height:25px;
-	margin-top:15px;
-	margin-left:12px;
-	border-radius:10px;
-	border:1px solid silver;
-	padding:5px;
-	float:left;
-}
-.p1 , .p2{
-	text-align:left;
-	font-family:Comic Sans MS;
-	color:#c33d6f;
-	font-size:24px;
-	padding-left:15px;
-}
-.p2{
-	padding-right:200px;
-	padding-top:0px;
-}
-
-.p3{
-
-	font-family:Comic Sans MS;
-	font-size:24px;
-	color:#c33d6f;
-	padding-left:280px;
-	margin-top:-150px;
-}
-.number{
-	font-size:130px;
-	font-family:Comic Sans MS;
-	margin-top:-40px;
-	padding:0px;
-	padding-right:400px;
-}
-/* New Form*/
-
-@media all and (min-width: 600px) {
-  .wrapper { flex: 1 auto; }
-}
-
-@media all and (min-width: 800px) {
-  .main-page { flex: 3 0px; }
-  .login-page { flex: 3 0px; }
-  .user-crushes { order: 1; } 
-  .notification-of-crushesNum  { order: 2; }
+		}  	
+  	}
 }
 

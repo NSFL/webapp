@@ -4,7 +4,11 @@ import {getToken} from './utils/token.js';
 import {showMainPage, showLoginForm} from './view/pages.js'
 import {onLoginClick} from './userApi.js';
 import {showHeader, showFooter} from './view/template.js';
-import {getMyCrushesPromise, getCrushesOnMe} from './crushApi.js';
+import {
+  getMyCrushesPromise,
+  showMyCrushes,
+  getCrushesOnMePromise,
+  showCrushesOnMe } from './crushApi.js';
 import {authUser, getUserData} from './userApi.js'
 import $ from 'jquery';
 
@@ -16,16 +20,24 @@ $(()=> {
     (data) => {
       showMainPage();
       getUserData(data);
-
       /*
       * the next functions was originaly like : 
-      *   getCrushesOnMe(); 
-      *   getMyCrushesPromise();
+      *   
+      * getCrushesOnMePromise().then((data) => {
+      *   showCrushesOnMe(data);
+      * });
+      * getMyCrushesPromise().then((data)=> {
+      *   showMyCrushes(data);
+      * });
       * but a database error occurs so that's just a temporarily workaround ;
       */ 
-      getCrushesOnMe().then(() => {
-        getMyCrushesPromise()
-      });
+      getCrushesOnMePromise()
+      .then((data) => {
+        showCrushesOnMe(data);
+        getMyCrushesPromise().then((data)=> {
+          showMyCrushes(data);
+        })
+      })
     },
     (error) => {
       showLoginForm();

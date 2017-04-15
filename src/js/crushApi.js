@@ -7,7 +7,6 @@ import $ from 'jquery';
 export function showMyCrushes(data) {
   $.each(data, function(key,value){
     $('.crush-list').append(`<li class='crush'>${key+1}-${value.crushDisplayName}</li>`);
-    console.log(`<li class='crush'>${key+1}-${value.crushDisplayName}</li>`);
   });
 }
 
@@ -21,7 +20,6 @@ export function getMyCrushesPromise() {
       },
       success: (data) => {
         resolve(data);
-        showMyCrushes(data);
       },
       error: (error) => {reject(error)} 
     })
@@ -35,7 +33,7 @@ export function showCrushesOnMe(data) {
   $('.number').text(data);
 }
 
-export function getCrushesOnMe(){
+export function getCrushesOnMePromise(){
   return new Promise( function(resolve, reject) {
     $.ajax({
       type: 'GET',
@@ -45,7 +43,6 @@ export function getCrushesOnMe(){
       },
       success: (data) => {
         resolve(data);
-        showCrushesOnMe(data);
       },
       error: (error) => {reject(error)} 
     });

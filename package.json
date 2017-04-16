@@ -4,26 +4,30 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": " concurrently \"live-server\" \"webpack --watch\" \"npm run watch-css\" ",
+    "start": " concurrently \"live-server --port=1111 --host=localhost \" \"webpack --watch\" \"npm run watch-css\" ",
     "postinstall": "npm install -g concurrently",
-    "build-css": "node-sass --include-path scss style.scss main.css",
+    "build-css": "node-sass --include-path scss src/css/style.scss src/build/main.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "test": "test"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "*",
-    "webpack": "*",
-    "nodemon": "*",
-    "babel-preset-es2015": "*",
+    "babel-core": "*",
     "babel-loader": "*",
-    "babel-core": "*"
+    "babel-preset-es2015": "*",
+    "html-loader": "^0.4.5",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
+    "webpack": "*"
   },
   "dependencies": {
-    "live-server": "*",
     "concurrently": "*",
     "jquery": "^3.2.1",
-    "jquery-ui-dist": "^1.12.1"
+    "jquery-ui-dist": "^1.12.1",
+    "js-cookie": "^2.1.4",
+    "live-server": "*",
+    "promise": "^7.1.1",
+    "superagent": "^3.5.2"
   }
 }

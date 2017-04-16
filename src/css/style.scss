@@ -1,12 +1,12 @@
 //colors
-$lightgrey:#e2e5e7;
-$rose:#c33d6f;
-$darkgrey:#808d94;
-$loginform:#7e7975;
-$fbbtn:#365899;
-$bgbtn:#4267b2;
-$white:#fff;
-$fblink:#3a5795;
+$lightgrey :#e2e5e7;
+$rose :#c33d6f;
+$darkgrey :#808d94;
+$loginform :#7e7975;
+$fbbtn :#365899;
+$bgbtn :#4267b2;
+$white :#fff;
+$fblink :#3a5795;
 
 //fonts
 $comicfont: Comic Sans MS;
@@ -52,39 +52,39 @@ body{
 
 .main-page {
 	width:100%;
-  	display:flex;
-  	flex-direction: column;
-  	.header3{
-  		@include welcome-header;
+	display: flex;
+	flex-direction: column;
+	.header3{
+		@include welcome-header;
 	}
-	.login-form{
+	.login-form {
 		display: flex;
 		flex-flow:column wrap;
-    	margin: 40px auto 30px;
-    	padding: 15px;
-    	background:$white;
-    	border-radius: 4px;
-    	color:$loginform;
-    	box-shadow:
-        	0 2px 2px rgba(0,0,0,0.2),        
-        	0 1px 5px rgba(0,0,0,0.2),        
-        	0 0 0 12px rgba(255,255,255,0.4); 
+  	margin: 40px auto 30px;
+  	padding: 15px;
+  	background:$white;
+  	border-radius: 4px;
+  	color:$loginform;
+  	box-shadow:
+    	0 2px 2px rgba(0,0,0,0.2),        
+    	0 1px 5px rgba(0,0,0,0.2),        
+    	0 0 0 12px rgba(255,255,255,0.4); 
 
-    	.sign-up{
-			font:{
-				size: 30px;
-    			weight: bold;
-    		}
-    		color: $rose;
-    		text-align: center;
-    		padding-bottom:20px;
-    		border-bottom: 1px solid #EBE6E2;
-    		text-shadow: 0 2px 0 rgba(255,255,255,0.8);
-    		box-shadow: 0 1px 0 rgba(255,255,255,0.8);
-		}
+	.sign-up{
+		font:{
+			size: 30px;
+  			weight: bold;
+  		}
+		color: $rose;
+		text-align: center;
+		padding-bottom:20px;
+		border-bottom: 1px solid #EBE6E2;
+		text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+		box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+	}
 
 		.p-login-form{
-			font:{
+			font :{
 				family:$comicfont;
 				size:18px;
 			}
@@ -144,7 +144,7 @@ body{
 
 .login-page{
 	width:100%;
-	display:flex;
+	display: flex;
 	flex-direction:column;
 	.welcome{
 		.header3{ 
@@ -235,12 +235,10 @@ body{
   		align-self:center;
   	}
   	.main-page {
-		display: flex;
   		flex-flow: column wrap;
 	}
 
   	.login-page{
-  		display: flex;
   		flex-direction: column;
   		.welcome{
   			width:100%;
@@ -276,11 +274,9 @@ body{
   		align-self:center;
   	}
   	.main-page {
-		display: flex;
   		flex-flow: column wrap;
 	}
   	.login-page{
-  		display:flex;
   		flex-direction:column;
   		.welcome{
   			width:100%;

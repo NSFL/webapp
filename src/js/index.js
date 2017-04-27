@@ -7,9 +7,7 @@ import {authUser, getUserData} from './userApi.js'
 import {showHeader, showFooter} from './view/template.js';
 import {
   crushURLEventHandler,
-  deleteCrushEventHandler,
   viewMyCrushes,
-  getMyCrushes,
   viewCrushesOnMe,
   showLoginForm,
   showMainPage,
@@ -25,7 +23,6 @@ $(()=> {
   showFooter();
   authUser().then( 
     (data) => {
-      getMyCrushes();
       showMainPage();
       getUserData(data);
       /*
@@ -45,9 +42,6 @@ $(()=> {
         getMyCrushesPromise()
         .then((data)=> {
           viewMyCrushes(data);
-        })
-        .then(()=> {
-          deleteCrushEventHandler();
         })
       });
       crushURLEventHandler();

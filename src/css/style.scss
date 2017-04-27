@@ -9,7 +9,7 @@ $white :#fff;
 $fblink :#3a5795;
 
 //fonts
-$comicfont: Comic Sans MS;
+$comicfont: 'roboto';
 
 @mixin paragraph-text {
 	font-family:$comicfont;

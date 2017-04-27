@@ -1,16 +1,21 @@
 var Promise = require('promise');
+import $ from 'jquery';
 import Cookies from 'js-cookie';
-import {getToken} from './utils/token.js';
-import {showMainPage, showLoginForm} from './view/pages.js'
 import {onLoginClick} from './userApi.js';
+import {getToken} from './utils/token.js';
+import {authUser, getUserData} from './userApi.js'
 import {showHeader, showFooter} from './view/template.js';
 import {
+  crushURLEventHandler,
+  viewMyCrushes,
+  viewCrushesOnMe,
+  showLoginForm,
+  showMainPage,
+  showLoginForm } from './view/pages.js'
+import {
   getMyCrushesPromise,
-  showMyCrushes,
-  getCrushesOnMePromise,
-  showCrushesOnMe } from './crushApi.js';
-import {authUser, getUserData} from './userApi.js'
-import $ from 'jquery';
+  getCrushesOnMePromise} from './crushApi.js';
+
 
 $(()=> {
   getToken();
@@ -24,20 +29,22 @@ $(()=> {
       * the next functions was originaly like : 
       *   
       * getCrushesOnMePromise().then((data) => {
-      *   showCrushesOnMe(data);
+      *   viewCrushesOnMe(data);
       * });
       * getMyCrushesPromise().then((data)=> {
-      *   showMyCrushes(data);
+      *   viewMyCrushes(data);
       * });
       * but a database error occurs so that's just a temporarily workaround ;
       */ 
       getCrushesOnMePromise()
       .then((data) => {
-        showCrushesOnMe(data);
-        getMyCrushesPromise().then((data)=> {
-          showMyCrushes(data);
+        viewCrushesOnMe(data);
+        getMyCrushesPromise()
+        .then((data)=> {
+          viewMyCrushes(data);
         })
-      })
+      });
+      crushURLEventHandler();
     },
     (error) => {
       showLoginForm();
